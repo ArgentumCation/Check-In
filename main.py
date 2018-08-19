@@ -1,5 +1,6 @@
 import time
 from Tkinter import *
+from tkMessageBox import *
 
 #List of Student Grades
 GRADES = ['K',1,2,3,4,5, 'Middle', 'High', 'College']
@@ -9,6 +10,7 @@ def addToFile():
     out = open('checkins.csv', 'a')
     out.write(student.get() + ',' + grade.get() + ',' + teacher.get() + ',' + subject.get() + ',' + time.strftime('%c') +'\n')
     out.close()
+    showinfo(title="Check-In",message=student.get()+" checked in Successfully!")
 
 def main():
     #File with Student names, Subjects, and Teacher Names
@@ -45,6 +47,10 @@ def initLabels():
 
 
 def initMenus(students,subjects,teachers):
+    global student
+    global grade
+    global teacher
+    global  subject
     student = StringVar(root)
     student.set(students[0])
     grade = StringVar(root)
@@ -71,7 +77,7 @@ def runGui(students,subjects,teachers):
     Grid.columnconfigure(root,1,weight=1)
     initLabels()
     initMenus(students,subjects,teachers)
-    Button(root,text="OK",command = addToFile).grid(row=4,columnspan=2)
+    Button(root,text="Check-In",command = addToFile).grid(row=4,columnspan=2)
     root.title('Check-In')
     root.iconbitmap('bg.ico')
     root.geometry('255x155')
