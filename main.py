@@ -1,3 +1,4 @@
+#!
 import time
 from Tkinter import *
 grades = ['K',1,2,3,4,5, 'Middle', 'High', 'College']
