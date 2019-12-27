@@ -15,3 +15,6 @@ The student records will be placed into the `checkins.csv` file in the format:
 |Student | Grade | Subject | Time|
 ---------|-------|---------|------
 |Student 1 | 9| Calculus | 9/26/18 14:45:02|
+
+## Screenshots
+![](images/screenshot.png)
